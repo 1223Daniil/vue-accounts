@@ -20,7 +20,7 @@ export const useAccountsStore = defineStore('accounts', {
         id: this.nextId++,
         rawLabel: '',
         label: [],
-        type: 'Локальная', 
+        type: 'Локальная',
         login: '',
         password: '',
       });
@@ -34,5 +34,6 @@ export const useAccountsStore = defineStore('accounts', {
     deleteAccount(id: number) {
       this.accounts = this.accounts.filter(acc => acc.id !== id);
     }
-  }
+  },
+  persist: true, // Включаем сохранение данных
 });
